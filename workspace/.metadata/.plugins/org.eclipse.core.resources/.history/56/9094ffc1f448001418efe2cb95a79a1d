@@ -1,0 +1,101 @@
+// R6 Assignment
+// Author: Ian Arcuri
+// Date: Sep 30, 2014
+// Class: CS160
+// Email: arcuri.ian@gmail.com
+public class R6 {
+	
+	public static boolean and(boolean b0, boolean b1) {
+	    // add code here, complete each method with one line of code.
+		return(b0&&b1);
+	}
+
+	public static boolean or(boolean b0, boolean b1) {
+	    // add code here
+		return(b0||b1);
+	}
+
+	public static boolean xor(boolean b0, boolean b1) {
+	    // add code here
+		return(b0 ^ b1); //logic: (!b0 && b1) || (b0 && !b1)
+	}
+
+	public static boolean nand(boolean b0, boolean b1) {
+	    // add code here
+		return(! (b0 && b1));
+	}
+
+	public static boolean nor(boolean b0, boolean b1) {
+	    // add code here
+		return(b0 != b1);
+	}
+
+	public static boolean special(boolean b0, boolean b1) {
+	    // add code here
+		return((! (b0 && b1))^(b0 || b1));
+	}
+
+	public static void printHeader(String logicalOperatorName) {
+	    // add code here
+		System.out.println("b0" + "\t" + "b1" + "\t" + "b0" + " " + logicalOperatorName + " " + "b1");
+	}
+
+	public static void printRow(boolean b0, boolean b1, boolean result) {
+	    // add code here
+		System.out.println(b0 + "\t" + b1 + "\t" + result);
+	}
+
+public static void main(String[] args) {
+
+		// Print truth table (AND)
+	    printHeader("AND");
+	    printRow(true, true, and(true,true));
+	    printRow(true, false, and(true,false));
+	    printRow(false, true, and(false,true));
+	    printRow(false, false, and(false,false));
+	    System.out.println();
+	    
+	    // Print truth table (OR)
+	    printHeader("OR");
+	    printRow(true, true, and(true,true));
+	    printRow(true, false, and(true,false));
+	    printRow(false, true, and(false,true));
+	    printRow(false, false, and(false,false));
+	    System.out.println();
+	    
+	    // Print truth table (XOR)
+	    printHeader("XOR");
+	    printRow(true, true, and(true,true));
+	    printRow(true, false, and(true,false));
+	    printRow(false, true, and(false,true));
+	    printRow(false, false, and(false,false));
+	    System.out.println();
+	    
+	    // Print truth table (NAND)
+	    printHeader("NAND");
+	    printRow(true, true, and(true,true));
+	    printRow(true, false, and(true,false));
+	    printRow(false, true, and(false,true));
+	    printRow(false, false, and(false,false));
+	    System.out.println();
+	    
+	    // Print truth table (NOR)
+	    printHeader("NOR");
+	    printRow(true, true, nor(true,true));
+	    printRow(true, false, nor(true,false));
+	    printRow(false, true, nor(false,true));
+	    printRow(false, false, nor(false,false));
+	    System.out.println();
+	    
+	    // Print truth table (special)
+	    printHeader("NOT(b0 AND b1) XOR (b0 OR b1)");
+	    printRow(true, true, and(true,true));
+	    printRow(true, false, and(true,false));
+	    printRow(false, true, and(false,true));
+	    printRow(false, false, and(false,false));
+	    System.out.println();
+
+
+	}
+
+}
